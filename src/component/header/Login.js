@@ -1,7 +1,7 @@
 import { Button, Form, Input, message, Modal } from 'antd'
 import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { login } from '../utils'
+import { login } from '../../utils'
  
 function Login({ onSuccess }) {
   const [displayModal, setDisplayModal] = useState(false)
@@ -38,7 +38,7 @@ function Login({ onSuccess }) {
         <b>Login</b>
       </Button>
       <Modal
-        title="Log in"
+        title="Sign in with Ur Email"
         visible={displayModal}
         onCancel={handleCancel}
         footer={null}
@@ -53,7 +53,7 @@ function Login({ onSuccess }) {
             name="email"
             rules={[{ required: true, message: 'Please input your Username!' }]}
           >
-            <Input prefix={<UserOutlined />} placeholder="Username(Eamil)" />
+            <Input prefix={<UserOutlined />} placeholder="Username(Email)" />
           </Form.Item>
           <Form.Item
             name="password"
@@ -66,7 +66,7 @@ function Login({ onSuccess }) {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={isLoading}>
-              Login
+              <b>Login</b>
             </Button>
           </Form.Item>
         </Form>

@@ -1,7 +1,7 @@
 import { Button, Form, Input, message, Modal } from 'antd';
 import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { register } from '../utils';
+import { register } from '../../utils';
  
 function Signup() {
   const [displayModal, setDisplayModal] = useState(false)
@@ -84,7 +84,7 @@ function Signup() {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={isLoading}>
-              Sign up
+              <b>Signup</b>
             </Button>
           </Form.Item>
         </Form>

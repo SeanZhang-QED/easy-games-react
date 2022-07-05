@@ -54,7 +54,6 @@ export const getTopGames = () => {
     if (response.status !== 200) {
       throw Error('Fail to get top games');
     }
- 
     return response.json();
   })
 }

@@ -1,19 +1,21 @@
 import React from 'react';
-import Signup from './Signup'
-import Login from './Login'
+import Signup from './header/Signup'
+import Login from './header/Login'
 import {Layout, Row, Col, Button } from 'antd'
+import FavoriteMenu from './favorite/FavoriteMenu';
+
 const {Header} = Layout;
 
-
-function AppHeader({ loggedIn, signoutOnClick, signinOnSuccess }) {
+function AppHeader(props) {
+    const { loggedIn, signoutOnClick, signinOnSuccess } = props;
     return (
         <Header className="site-layout-background">
             <Row justify='space-between'>
                 <Col>
-                {'Favorites'}
+                {loggedIn && <FavoriteMenu />}
                 </Col>
                 <Col>
-                {loggedIn && <Button shape="round" onClick={signoutOnClick}>Logout</Button>}
+                {loggedIn && <Button shape="round" onClick={signoutOnClick}><b>Log out</b></Button>}
                 {!loggedIn && (
                     <>
                     <Login onSuccess={signinOnSuccess} />

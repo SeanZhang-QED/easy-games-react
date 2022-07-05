@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 
+html {
+  --antd-wave-shadow-color: #9147ff;
+}
+
 .site-layout-background {
     background: white;
   }
@@ -10,7 +14,19 @@ overflow-y: auto;
 overflow-x: hidden;
 }
 
-.ant-btn-default:hover {
+
+.ant-btn-default:hover,
+.ant-btn-default:active,
+.ant-btn-default:focus {
     color: #9147ff;
+    border-color: #9147ff;
+}
+
+.ant-btn-primary,
+.ant-btn-primary:hover,
+.ant-btn-primaryL:active,
+.ant-btn-primary:focus {
+    color: white;
+    background-color: #9147ff;
     border-color: #9147ff;
 }
