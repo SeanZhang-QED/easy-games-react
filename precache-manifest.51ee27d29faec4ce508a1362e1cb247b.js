@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2d3fc7a9de0f87d86797",
+    "revision": "5fcab4960499fc5d35ae",
     "url": "/easy-games-react/static/css/main.7a2b13df.chunk.css"
   },
   {
-    "revision": "2d3fc7a9de0f87d86797",
-    "url": "/easy-games-react/static/js/main.2d3fc7a9.chunk.js"
+    "revision": "5fcab4960499fc5d35ae",
+    "url": "/easy-games-react/static/js/main.5fcab496.chunk.js"
   },
   {
     "revision": "f25033e056dce94ebafe",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/easy-games-react/static/js/runtime~main.b94a5dca.js"
   },
   {
-    "revision": "6f7b06f10a9d7c8faca7720b196173ed",
+    "revision": "57a7839b5459d7b78e3ae0fe7a951268",
     "url": "/easy-games-react/index.html"
   }
 ];

@@ -1,7 +1,7 @@
 {
   "main.css": "/easy-games-react/static/css/main.7a2b13df.chunk.css",
-  "main.js": "/easy-games-react/static/js/main.2d3fc7a9.chunk.js",
-  "main.js.map": "/easy-games-react/static/js/main.2d3fc7a9.chunk.js.map",
+  "main.js": "/easy-games-react/static/js/main.5fcab496.chunk.js",
+  "main.js.map": "/easy-games-react/static/js/main.5fcab496.chunk.js.map",
   "static/js/1.f25033e0.chunk.js": "/easy-games-react/static/js/1.f25033e0.chunk.js",
   "static/js/1.f25033e0.chunk.js.map": "/easy-games-react/static/js/1.f25033e0.chunk.js.map",
   "static/css/2.fa409ef4.chunk.css": "/easy-games-react/static/css/2.fa409ef4.chunk.css",
@@ -12,6 +12,6 @@
   "static/css/main.7a2b13df.chunk.css.map": "/easy-games-react/static/css/main.7a2b13df.chunk.css.map",
   "static/css/2.fa409ef4.chunk.css.map": "/easy-games-react/static/css/2.fa409ef4.chunk.css.map",
   "index.html": "/easy-games-react/index.html",
-  "precache-manifest.d2566c36e8b0cf374b10c11d4774bd87.js": "/easy-games-react/precache-manifest.d2566c36e8b0cf374b10c11d4774bd87.js",
+  "precache-manifest.51ee27d29faec4ce508a1362e1cb247b.js": "/easy-games-react/precache-manifest.51ee27d29faec4ce508a1362e1cb247b.js",
   "service-worker.js": "/easy-games-react/service-worker.js"
 }
