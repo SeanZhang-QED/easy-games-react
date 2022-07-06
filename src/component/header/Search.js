@@ -1,11 +1,12 @@
 import { Button, message, Modal, Form, Input } from 'antd';
 import React, { useState } from 'react';
-import { SearchOutlinted } from '@ant-design/icons';
-import { searchGameByName } from '../utils'
+import { SearchOutlined } from '@ant-design/icons';
+import { searchGameByName } from '../../utils'
 
 function Search(props) {
     const[displayModal, setDisplayModal] = useState(false);
-    
+    const { onSuccess } = props;
+
     const handleCancle = () => {
         setDisplayModal(false)
     }
@@ -17,7 +18,8 @@ function Search(props) {
     const onSubmit = (data) => {
         searchGameByName(data.game_name)
             .then((data) => {
-                console.log(data)
+                setDisplayModal(false);
+                onSuccess(data);
             })
             .catch((err)=>{
                 message.error(err.message)
@@ -29,10 +31,10 @@ function Search(props) {
             <Button
                 shape='round'
                 onClick={searchOnClick}
-                icon={<SearchOutlinted/>}
-                style={{ marginRight: '20px', marginTop: '20px' }}
+                icon={<SearchOutlined/>}
+                style={{ marginRight: '20px', marginTop: '20px'}}
             >
-                Search
+                <b>  Search</b>
             </Button>
             <Modal
                 title="Search"

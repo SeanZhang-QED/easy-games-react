@@ -1,3 +1,4 @@
+// const SERVER_ORIGIN = 'http://13.59.49.252:8080';
 const SERVER_ORIGIN = '';
  
 // Login API
@@ -63,9 +64,8 @@ const getGameDetailsUrl = `${SERVER_ORIGIN}/game?game_name=`;
 const getGameDetails = (gameName) => {
   return fetch(`${getGameDetailsUrl}${gameName}`).then((response) => {
     if (response.status !== 200) {
-      throw Error('Fail to find the game');
+      throw Error('Fail to search the game by its name');
     }
- 
     return response.json();
   });
 }
@@ -75,7 +75,7 @@ const searchGameByIdUrl = `${SERVER_ORIGIN}/search?game_id=`;
 export const searchGameById = (gameId) => {
   return fetch(`${searchGameByIdUrl}${gameId}`).then((response) => {
     if (response.status !== 200) {
-      throw Error('Fail to find the game');
+      throw Error('Fail to find items of the game by game id');
     }
     return response.json();
   })
@@ -83,8 +83,9 @@ export const searchGameById = (gameId) => {
  
 export const searchGameByName = (gameName) => {
   return getGameDetails(gameName).then((data) => {
-    if (data && data.id) {
-      return searchGameById(data.id);
+    console.log(data[0]);
+    if (data[0] && data[0].id) {
+      return searchGameById(data[0].id);
     }
     throw Error('Fail to find the game')
   })
@@ -145,7 +146,6 @@ export const getRecommendations = () => {
     if (response.status !== 200) {
       throw Error('Fail to get recommended item');
     }
- 
     return response.json();
   })
 }

@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import { getFavoriteItem } from '../../utils';
-import { message, Button, Drawer, Menu } from 'antd'
+import { Button, Drawer, Menu } from 'antd'
 import { EyeOutlined, YoutubeOutlined, VideoCameraOutlined, StarFilled } from '@ant-design/icons';
 import MenuItem from './MenuItem';
-
-const { SubMenu } = Menu;
 
 class FavoriteMenu extends Component {
     state = {
         displayDrawer: false,
-        data: {
-            VIDEO: [],
-            STREAM: [],
-            CLIP: []
-        }
+    }
+
+    onFavoriteClick = () => {
+        this.setState({
+            displayDrawer: true
+        })
     }
 
     onDrawerClose = () => {
@@ -22,32 +20,9 @@ class FavoriteMenu extends Component {
         })
     }
 
-    onFavoriteClick = () => {
-        getFavoriteItem()
-            .then((data) => {
-                const { VEDIO, STREAM, CLIP } = data;
-                if(typeof VEDIO === "undefined") {
-                    data.VEDIO = [];
-                }
-                if(typeof STREAM === "undefined") {
-                    data.STREAM = [];
-                }
-                if(typeof CLIP === "undefined") {
-                    data.CLIP = [];
-                }
-                this.setState({
-                    displayDrawer: true,
-                    data,
-                });
-                console.log(data)
-            })
-            .catch((err) => {
-                message.error(err.message)
-            })
-    }
-
     render() {
-        const { VEDIO, STREAM, CLIP } = this.state.data;
+        // console.log(this.props.favoriteItems);
+        const { VIDEO, STREAM, CLIP } = this.props.favoriteItems;
         return (
             <>
                 <Button
@@ -55,7 +30,7 @@ class FavoriteMenu extends Component {
                     onClick={this.onFavoriteClick}
                     icon={<StarFilled />}
                 >
-                    <b>My Favorite</b>
+                    <b>  Following</b>
                 </Button>
                 <Drawer
                     title='My Favorites'
@@ -70,15 +45,15 @@ class FavoriteMenu extends Component {
                         style={{ height: '100%', borderRight: 0 }}
                         selectable={false}
                     >
-                        <SubMenu key={'streams'} icon={<EyeOutlined />} title="Streams">
+                        <Menu.SubMenu key={'streams'} icon={<EyeOutlined />} title="Streams">
                             <MenuItem items={STREAM} />
-                        </SubMenu>
-                        <SubMenu key={'videos'} icon={<YoutubeOutlined />} title="Videos">
-                            <MenuItem items={VEDIO} />
-                        </SubMenu>
-                        <SubMenu key={'clips'} icon={<VideoCameraOutlined />} title="Clips">
+                        </Menu.SubMenu>
+                        <Menu.SubMenu key={'videos'} icon={<YoutubeOutlined />} title="Videos">
+                            <MenuItem items={VIDEO} />
+                        </Menu.SubMenu>
+                        <Menu.SubMenu key={'clips'} icon={<VideoCameraOutlined />} title="Clips">
                             <MenuItem items={CLIP} />
-                        </SubMenu>
+                        </Menu.SubMenu>
                     </Menu>
                 </Drawer>
             </>

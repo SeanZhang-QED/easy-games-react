@@ -33,7 +33,6 @@ function Signup() {
     <>
       <Button 
         type="primary"
-        style={{background: "#9147ff", borderColor: "#9147ff"}} 
         onClick={signupOnClick}
       >
         <b>Sign Up</b>

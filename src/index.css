@@ -1,12 +1,9 @@
 @import '~antd/dist/antd.css';
 
-html {
-  --antd-wave-shadow-color: #9147ff;
+.site-layout-background {
+  background: #fff;
 }
 
-.site-layout-background {
-    background: white;
-  }
    
 .site-top-game-list ul {
 max-height: 700px;
@@ -15,18 +12,12 @@ overflow-x: hidden;
 }
 
 
-.ant-btn-default:hover,
-.ant-btn-default:active,
-.ant-btn-default:focus {
-    color: #9147ff;
-    border-color: #9147ff;
+.footer {
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
-.ant-btn-primary,
-.ant-btn-primary:hover,
-.ant-btn-primaryL:active,
-.ant-btn-primary:focus {
-    color: white;
-    background-color: #9147ff;
-    border-color: #9147ff;
+.footer a:hover {
+  text-decoration: underline;
 }
