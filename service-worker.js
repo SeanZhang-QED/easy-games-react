@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/easy-games-react/precache-manifest.51ee27d29faec4ce508a1362e1cb247b.js"
+  "/easy-games-react/precache-manifest.a035ed6bc9fc597a50336b4681827309.js"
 );
 
 workbox.clientsClaim();
