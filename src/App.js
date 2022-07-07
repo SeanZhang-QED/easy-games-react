@@ -72,11 +72,13 @@ function App() {
     if(key === 'recommendation') {
       getRecommendations().then((data) => {
         setResources(data);
+        message.success("Successfully get the things may intrest U.")
       })
       return
     }
     searchGameById(key).then((data) => {
       setResources(data);
+      message.success("Successfully Loaded.")
     });
   };
 

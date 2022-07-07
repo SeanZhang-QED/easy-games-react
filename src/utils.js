@@ -1,5 +1,5 @@
-// const SERVER_ORIGIN = 'http://13.59.49.252:8080';
-const SERVER_ORIGIN = '';
+const SERVER_ORIGIN = 'http://13.59.49.252:8080';
+// const SERVER_ORIGIN = '';
  
 // Login API
 const loginUrl = `${SERVER_ORIGIN}/login`;
@@ -83,7 +83,7 @@ export const searchGameById = (gameId) => {
  
 export const searchGameByName = (gameName) => {
   return getGameDetails(gameName).then((data) => {
-    console.log(data[0]);
+    // console.log(data[0]);
     if (data[0] && data[0].id) {
       return searchGameById(data[0].id);
     }

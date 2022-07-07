@@ -16,7 +16,7 @@ function Signup() {
   }
  
   const onFinish = (data) => {
-    console.log(data)
+    // console.log(data)
     setIsLoading(true)
     register(data)
       .then(() => {

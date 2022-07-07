@@ -35,7 +35,7 @@ class FavoriteMenu extends Component {
                 <Drawer
                     title='My Favorites'
                     placement='right'
-                    width={720}
+                    width={500}
                     visible={this.state.displayDrawer}
                     onClose={this.onDrawerClose}
                 >

@@ -36,15 +36,16 @@ const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
     const favOnClick = () => {
         if (isFav) {
           deleteFavoriteItem(item).then(() => {
+            message.success("Unfollowed.")
             favOnChange();
           }).catch(err => {
             message.error(err.message)
           })
-     
           return;
         }
      
         addFavoriteItem(item).then(() => {
+          message.success("Following.")
           favOnChange();
         }).catch(err => {
           message.error(err.message)

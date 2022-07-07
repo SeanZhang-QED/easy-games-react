@@ -1,7 +1,6 @@
 {
   "name": "easy-games-react",
   "version": "0.1.0",
-  "homepage": "https://seanzhang-qed.github.io/easy-games-react/",
   "private": true,
   
   "dependencies": {
@@ -16,8 +15,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,9 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://13.59.49.252:8080",
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }
