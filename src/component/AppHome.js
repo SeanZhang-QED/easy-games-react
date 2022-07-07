@@ -30,9 +30,16 @@ const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
         name = `${item.user_name}`
     }
     const title = `${name} - ${item.title}`;
-
-    const isFav = typeof fav === "undefined" ? false : favs.find((fav) => fav.id === item.id);
     
+    // console.log(favs)
+
+    let isFav
+    if (typeof favs === 'undefined' || favs.length == 0) {
+      isFav = undefined
+    } else {
+      isFav = favs.find((fav) => fav.id === item.id)
+    }
+
     const favOnClick = () => {
         if (isFav) {
           deleteFavoriteItem(item).then(() => {
@@ -43,7 +50,6 @@ const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
           })
           return;
         }
-     
         addFavoriteItem(item).then(() => {
           message.success("Following.")
           favOnChange();
@@ -51,6 +57,7 @@ const renderCardTitle = (item, loggedIn, favs, favOnChange) => {
           message.error(err.message)
         })
     }
+
     return (
         <>
           {

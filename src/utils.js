@@ -139,9 +139,19 @@ export const getFavoriteItem = () => {
 
 // Get recommendations API
 const getRecommendedItemsUrl = `${SERVER_ORIGIN}/recommendation`;
-export const getRecommendations = () => {
+export const getRecommendations = (isLoggedIn) => {
+
+  if(isLoggedIn) {
+    return fetch(getRecommendedItemsUrl, {
+      credentials: 'include',
+    }).then((response) => {
+      if (response.status !== 200) {
+        throw Error('Fail to get recommended item');
+      }
+      return response.json();
+    })
+  }
   return fetch(getRecommendedItemsUrl, {
-    credentials: 'include',
   }).then((response) => {
     if (response.status !== 200) {
       throw Error('Fail to get recommended item');
