@@ -106,13 +106,13 @@ const AppHome = ({ resources, loggedIn, favoriteItems, favoriteOnChange }) => {
     <Tabs
       defaultActiveKey={tabKeys.Streams}
     >
-      <TabPane tab="Streams" key={tabKeys.Streams} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
+      <TabPane tab="Streams" key={tabKeys.Streams} style={{ height: '850px', overflow: 'auto' }} forceRender={true}>
         {renderCardGrid(STREAM, loggedIn, favStreams, favoriteOnChange)}
       </TabPane>
-      <TabPane tab="Videos" key={tabKeys.Videos} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
+      <TabPane tab="Videos" key={tabKeys.Videos} style={{ height: '850px', overflow: 'auto' }} forceRender={true}>
         {renderCardGrid(VIDEO, loggedIn, favVideos, favoriteOnChange)}
       </TabPane>
-      <TabPane tab="Clips" key={tabKeys.Clips} style={{ height: '680px', overflow: 'auto' }} forceRender={true}>
+      <TabPane tab="Clips" key={tabKeys.Clips} style={{ height: '850px', overflow: 'auto' }} forceRender={true}>
         {renderCardGrid(CLIP, loggedIn, favClips, favoriteOnChange)}
       </TabPane>
     </Tabs>

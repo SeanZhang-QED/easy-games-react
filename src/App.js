@@ -160,7 +160,7 @@ function App() {
             style={{
               padding: 24,
               margin: 0,
-              height: 800,
+              height: 975,
               borderRadius: 6,
               overflow: 'auto'
             }}
