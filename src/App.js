@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, message, Menu } from 'antd';
 import { LikeOutlined, FireOutlined } from '@ant-design/icons';
-import { logout, getFavoriteItem, getTopGames, searchGameById, getRecommendations } from './utils';
+import { logout, getFavoriteItem, getTopGames, searchGameById, getRecommendations, delete_cookie } from './utils';
 import AppHeader from './component/AppHeader';
 import AppHome from './component/AppHome'
 import { Footer } from 'antd/lib/layout/layout';
@@ -23,8 +23,8 @@ function App() {
     CLIP: [],
   });
 
-
   useEffect(() => {
+    delete_cookie('sessionId');
     getRecommendations().then((data) => {
       setResources(data);
     }).catch((err) => {
@@ -133,7 +133,7 @@ function App() {
 
 
   return (
-    <Layout>
+    <Layout style={{ minWidth:'800px' }}>
       <AppHeader
         loggedIn={loggedIn}
         signoutOnClick={signoutOnClick}
@@ -154,7 +154,7 @@ function App() {
             defaultOpenKeys={['popular_games']}
           />
         </Sider>
-        <Layout >
+        <Layout style={{ minWidth:'500px' }} >
           <Content
             className="site-layout-background"
             style={{
@@ -162,7 +162,7 @@ function App() {
               margin: 0,
               overflow: 'auto',
               borderRadius: 6,
-              height: '100%'
+              height: '100%',
             }}
           >
             <AppHome

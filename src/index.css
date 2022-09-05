@@ -23,13 +23,58 @@
   width: 100%;
 }
 
+.search-bar .ant-input {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ant-col .ant-input-search .ant-input:hover {
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.ant-col .ant-input-search .ant-input:focus {
+  background-color: white;
+  border-color: var(--brand-color-purple);
+  box-shadow: 0 0 0 2px var(--brand-color-purple);
+}
+
+.search-bar .ant-btn-primary {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
+
+.search-bar .ant-btn-primary:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ant-col .ant-input-group>.ant-input:first-child,
+.ant-input-group-addon:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.ant-col .ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 4px 5px;
+}
+
+.ant-col .ant-input-search>.ant-input-group>.ant-input-group-addon:last-child {
+  left: 2px;
+}
+
+.ant-input-group-addon .anticon svg {
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+
 .ant-layout-sider-dark {
   background-color: var(--brand-color-bcground-sider);
 }
 
-.ant-menu-vertical .ant-menu-item:not(:last-child), 
-.ant-menu-vertical-left .ant-menu-item:not(:last-child), 
-.ant-menu-vertical-right .ant-menu-item:not(:last-child), 
+.ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-vertical-left .ant-menu-item:not(:last-child),
+.ant-menu-vertical-right .ant-menu-item:not(:last-child),
 .ant-menu-inline .ant-menu-item:not(:last-child) {
   margin-bottom: 5px;
 }
@@ -49,4 +94,3 @@
 .footer a:hover {
   text-decoration: underline;
 }
-
