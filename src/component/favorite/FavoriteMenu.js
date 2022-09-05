@@ -33,7 +33,7 @@ class FavoriteMenu extends Component {
                     <b>  Following</b>
                 </Button>
                 <Drawer
-                    title='My Favorites'
+                    title='Follow your favorites for easy access!'
                     placement='right'
                     width={500}
                     visible={this.state.displayDrawer}

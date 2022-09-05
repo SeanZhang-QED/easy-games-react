@@ -1,16 +1,44 @@
 @import '~antd/dist/antd.css';
 
+:root {
+  --brand-color-purple: #9146ff;
+  --brand-color-bcground-sider: #f7f7f8;
+}
+
 .site-layout-background {
   background: #fff;
 }
 
-   
-.site-top-game-list ul {
-max-height: 875px;
-overflow-y: auto;
-overflow-x: hidden;
+.ant-layout {
+  background-color: white;
 }
 
+.ant-layout-header {
+  background-color: white;
+  z-index: 100;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.ant-layout-sider-dark {
+  background-color: var(--brand-color-bcground-sider);
+}
+
+.ant-menu-vertical .ant-menu-item:not(:last-child), 
+.ant-menu-vertical-left .ant-menu-item:not(:last-child), 
+.ant-menu-vertical-right .ant-menu-item:not(:last-child), 
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.favorite-icon {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+}
 
 .footer {
   margin: auto;
@@ -21,3 +49,4 @@ overflow-x: hidden;
 .footer a:hover {
   text-decoration: underline;
 }
+
