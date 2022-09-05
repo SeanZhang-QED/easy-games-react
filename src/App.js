@@ -25,12 +25,17 @@ function App() {
 
 
   useEffect(() => {
+    getRecommendations().then((data) => {
+      setResources(data);
+    }).catch((err) => {
+      message.error("Something wrong happened: ", err.message);
+    })
     getTopGames()
       .then((data) => {
         setTopGames(data)
       }).catch((err) => {
         message.error(err.message)
-      })
+      });
   }, [])
 
   const signinOnSuccess = () => {
@@ -72,7 +77,7 @@ function App() {
     if (key === 'recommendation') {
       getRecommendations().then((data) => {
         setResources(data);
-        message.success("Successfully get the things may intrest U.")
+        message.success("Something that we think you'll like.")
       })
       return
     }
@@ -136,15 +141,17 @@ function App() {
         searchOnSuccess={searchOnSuccess}
         favoriteItems={favoriteItems}
       />
-      <Layout style={{ paddingTop: 64, paddingBottom: 50}}>
+      <Layout style={{ paddingTop: 64, paddingBottom: 50 }}>
         <Sider
           width={300}
         >
           <Menu
             mode="inline"
-            style={{ height: '100%', position: 'fixed', left: 0, top: 64, width: 300}}
+            style={{ height: '100%', position: 'fixed', left: 0, top: 64, width: 300 }}
             onSelect={onGameSelect}
             items={mapTopGamesToProps(topGames)}
+            defaultSelectedKeys={["recommendation"]}
+            defaultOpenKeys={['popular_games']}
           />
         </Sider>
         <Layout >
